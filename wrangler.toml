@@ -1,0 +1,11 @@
+name = "lp-goto-connect"
+compatibility_date = "2026-11-01"
+pages_build_output_dir = "./public"
+
+# Variáveis NÃO secretas podem ficar aqui.
+# GOOGLE_SCRIPT_URL e SHEETS_SECRET devem ser cadastradas como "Secret" no painel
+# (Pages > lp-goto-connect > Settings > Variables and Secrets) ou via:
+#   npx wrangler pages secret put GOOGLE_SCRIPT_URL
+#   npx wrangler pages secret put SHEETS_SECRET
+[vars]
+ALLOWED_ORIGINS = "https://gotoconnect.meester.com.br"
