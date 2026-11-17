@@ -75,6 +75,7 @@ mark { background: linear-gradient(transparent 58%, var(--goto-yellow) 58%, var(
 .eyebrow { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .85rem; font-weight: 600; color: #C9CED4; margin-bottom: 18px; }
 .goto-mark { display: inline-block; background: var(--goto-yellow); color: var(--ink); font-weight: 800; padding: 3px 8px; border-radius: 6px; letter-spacing: -0.02em; }
 .hero h1 { color: var(--white); }
+.hero h1 .wa { color: var(--goto-green-2); }
 .hero mark { background: linear-gradient(transparent 60%, rgba(255, 233, 0, .9) 60%, rgba(255, 233, 0, .9) 90%, transparent 90%); color: var(--white); }
 .lead { font-size: 1.08rem; color: #D7DBE0; max-width: 40em; }
 .lead strong { color: var(--white); }
