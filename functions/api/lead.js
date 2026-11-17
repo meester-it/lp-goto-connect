@@ -106,6 +106,8 @@ export async function onRequestPost({ request, env }) {
   };
 
   try {
+    // Obs.: falhas do Apps Script retornam HTTP 200 com ok:false, porque o Cloudflare
+    // substitui respostas 502 pela página de erro dele e o site perderia a mensagem.
     // O Apps Script responde com redirect 302 -> seguimos automaticamente
     const res = await fetch(env.GOOGLE_SCRIPT_URL, {
       method: 'POST',
@@ -118,11 +120,11 @@ export async function onRequestPost({ request, env }) {
     try { out = JSON.parse(text); } catch { /* resposta não-JSON */ }
     if (!res.ok || out.ok !== true) {
       console.error('Apps Script error', res.status, text.slice(0, 500));
-      return json({ ok: false, error: 'Não foi possível registrar agora. Tente novamente em instantes.' }, 502);
+      return json({ ok: false, error: 'Não foi possível registrar agora. Tente novamente em instantes.' }, 200);
     }
   } catch (err) {
     console.error('Fetch error', err);
-    return json({ ok: false, error: 'Não foi possível registrar agora. Tente novamente em instantes.' }, 502);
+    return json({ ok: false, error: 'Não foi possível registrar agora. Tente novamente em instantes.' }, 200);
   }
 
   return json({ ok: true });
