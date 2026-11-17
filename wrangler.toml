@@ -2,10 +2,12 @@ name = "lp-goto-connect"
 compatibility_date = "2026-11-01"
 pages_build_output_dir = "./public"
 
-# Variáveis NÃO secretas podem ficar aqui.
-# GOOGLE_SCRIPT_URL e SHEETS_SECRET devem ser cadastradas como "Secret" no painel
+# Variáveis NÃO secretas ficam aqui.
+# SHEETS_SECRET deve ser cadastrada como "Secret" no painel
 # (Pages > lp-goto-connect > Settings > Variables and Secrets) ou via:
 #   npx wrangler pages secret put GOOGLE_SCRIPT_URL
 #   npx wrangler pages secret put SHEETS_SECRET
 [vars]
 ALLOWED_ORIGINS = "https://gotoconnect.meester.com.br"
+# URL do App da Web do Apps Script (não é secreta; a proteção é o SHEETS_SECRET)
+GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNYdsPHWflK8DmUO5xpStV2BRPY_AMtaJx3YlU7i_p2_OVWsV-BfOy0iFGYJEhqYbS/exec"
